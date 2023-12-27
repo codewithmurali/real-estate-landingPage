@@ -80,6 +80,7 @@ const StyledNavbar = styled.nav`
       background-color: var(--secondary-color);
       padding: 10px;
       text-align: center;
+      z-index: 10;
     }
 
     &.show {

@@ -5,9 +5,9 @@ function App() {
 
   return (
     <>
-    <Navbar/>
-    <LandingPage/>
-<AboutUs/>
+      <Navbar />
+      <LandingPage />
+      <AboutUs />
     </>
   )
 }
