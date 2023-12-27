@@ -1,13 +1,64 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
+
+const Navbar = () => {
+  const [showNavLinks, setShowNavLinks] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const handleMenuToggle = () => {
+    setShowNavLinks(!showNavLinks);
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleNavLinkClick = () => {
+    setShowNavLinks(false);
+    setIsMenuOpen(false);
+  };
+
+  return (
+    <StyledNavbar>
+      <div className="logo">Your Logo</div>
+      <div className={`menu-toggle ${isMenuOpen ? 'open' : ''}`} onClick={handleMenuToggle}>
+        <div className="bar"></div>
+        <div className="bar"></div>
+        <div className="bar"></div>
+      </div>
+      <ul className={`nav-links ${showNavLinks ? 'show' : ''}`}>
+        <li>
+          <a href="#" onClick={handleNavLinkClick}>
+            Home
+          </a>
+        </li>
+        <li>
+          <a href="#" onClick={handleNavLinkClick}>
+            About
+          </a>
+        </li>
+        <li>
+          <a href="#" onClick={handleNavLinkClick}>
+            Services
+          </a>
+        </li>
+        <li>
+          <a href="#" onClick={handleNavLinkClick}>
+            Contact
+          </a>
+        </li>
+      </ul>
+      <button className="contact-btn">Contact</button>
+    </StyledNavbar>
+  );
+};
+
+export default Navbar;
+
 const StyledNavbar = styled.nav`
   background-color: var(--secondary-color);
   padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   .logo {
     color: var(--primary-color);
     font-size: 24px;
@@ -29,6 +80,7 @@ const StyledNavbar = styled.nav`
       background-color: var(--secondary-color);
       padding: 10px;
       text-align: center;
+      z-index: 10;
     }
 
     &.show {
@@ -90,54 +142,3 @@ const StyledNavbar = styled.nav`
     transform: rotate(45deg) translate(-5px, -6px);
   }
 `;
-
-const Navbar = () => {
-    const [showNavLinks, setShowNavLinks] = useState(false);
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-    const handleMenuToggle = () => {
-        setShowNavLinks(!showNavLinks);
-        setIsMenuOpen(!isMenuOpen);
-    };
-
-    const handleNavLinkClick = () => {
-        setShowNavLinks(false);
-        setIsMenuOpen(false);
-    };
-
-    return (
-        <StyledNavbar>
-            <div className="logo">Your Logo</div>
-            <div className={`menu-toggle ${isMenuOpen ? 'open' : ''}`} onClick={handleMenuToggle}>
-                <div className="bar"></div>
-                <div className="bar"></div>
-                <div className="bar"></div>
-            </div>
-            <ul className={`nav-links ${showNavLinks ? 'show' : ''}`}>
-                <li>
-                    <a href="#" onClick={handleNavLinkClick}>
-                        Home
-                    </a>
-                </li>
-                <li>
-                    <a href="#" onClick={handleNavLinkClick}>
-                        About
-                    </a>
-                </li>
-                <li>
-                    <a href="#" onClick={handleNavLinkClick}>
-                        Services
-                    </a>
-                </li>
-                <li>
-                    <a href="#" onClick={handleNavLinkClick}>
-                        Contact
-                    </a>
-                </li>
-            </ul>
-            <button className="contact-btn">Contact</button>
-        </StyledNavbar>
-    );
-};
-
-export default Navbar;
