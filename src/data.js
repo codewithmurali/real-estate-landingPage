@@ -1,3 +1,9 @@
+import GYM from '../src/assets/icons/gym.png'
+import Buddha from '../src/assets/icons/buddha.png'
+import Kids from '../src/assets/icons/kids.png'
+import Security from '../src/assets/icons/security.png'
+import Solor from '../src/assets/icons/solor.png'
+import Nature from '../src/assets/icons/nature.png'
 
 export const faqData = [
     {
@@ -40,38 +46,44 @@ export const streetViewData = [
 export const AMENITIES_ELEMENTS = [
     {
         id: 0,
+        image: GYM,
         name: " In-house Gym",
     },
     {
         id: 1,
+        image: Buddha,
         name: "Buddha small temple",
     },
     {
         id: 2,
+        image: Nature,
         name: "Green Landscape",
     },
     {
         id: 3,
+        image: Kids,
         name: "Kids zone & Senior Citizens area",
     },
     {
         id: 4,
+        image: Security,
         name: "Advanced Security 24/7",
     },
     {
         id: 5,
+        image: Solor,
         name: "Solar Energy for Street Lighting",
     },
 ];
 
 export const KEY_FEATURES = [
-    {
-        id: 0,
-        feature: "A PROPERTY IN TADA LIKE NO OTHER",
-    },
+    // {
+    //     id: 0,
+    //     feature: "A PROPERTY IN TADA LIKE NO OTHER",
+    // },
     {
         id: 1,
-        feature: "LAKEVIEW VILLAS",
+        feature: "ISRO SPACE STATION LAUNCH PAD VISIBLE FROM OUR SITE.",
     },
     {
         id: 2,
