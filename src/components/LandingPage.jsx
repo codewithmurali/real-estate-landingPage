@@ -77,7 +77,7 @@ const Content = styled.div`
   color: var(--secondary-color);
   z-index: 2;
   animation: ${fadeIn} 1.5s ease-in-out;
-
+width: 100%;
   h1 {
     font-size: 66px;
   }
