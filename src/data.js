@@ -1,4 +1,3 @@
-import partner1 from "../src/assets/partner1.png";
 
 export const faqData = [
     {
@@ -24,7 +23,7 @@ export const faqData = [
 export const partnerData = [
     {
         name: 'Partner 1',
-        image: partner1,
+        image: 'partner1',
     },
 ];
 
