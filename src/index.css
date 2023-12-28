@@ -8,12 +8,15 @@
   --mobile-font-size: 16px;
   --desktop-font-size: 18px;
   --tablet-font-size: 16px;
+
+
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
   font-family:   sans-serif;
   font-size: var(--desktop-font-size);
   overflow-x: hidden
@@ -40,4 +43,7 @@ h1 {
   * {
     font-size: var(--tablet-font-size);
   }
+}
+
+  font-family: Arial, sans-serif;
 }
