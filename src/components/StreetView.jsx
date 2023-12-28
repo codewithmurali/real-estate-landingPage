@@ -159,8 +159,8 @@ const StreetView = () => {
     );
 };
 
-// Custom styles for arrow icons
 const ArrowIcon = styled.div`
+position: absolute;
   font-size: 24px;
   color: #000;
   cursor: pointer;
