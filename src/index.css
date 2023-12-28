@@ -1,6 +1,6 @@
 :root {
   --primary-color: black;
-  --secondary-color: white;
+  --secondary-color: #fff;
   --main-shade: #7065f0;
   --overlay-gradient: linear-gradient(
     rgba(255, 255, 255, 0.879),

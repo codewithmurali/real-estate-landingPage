@@ -19,7 +19,7 @@ const CardContainer = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 2rem; 
+  gap: 2rem;
 `;
 
 const Card = styled.div`

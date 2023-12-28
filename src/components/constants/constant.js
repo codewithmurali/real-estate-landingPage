@@ -60,7 +60,7 @@ export const KEY_FEATURES = [
   },
   {
     id: 8,
-    feature: "ACCESS TO THE BEST SCHOOLS AND INSTITUTIONS",
+    feature: "ACCESS TO THE BEST SCHOOLS & INSTITUTIONS",
   },
   {
     id: 9,
