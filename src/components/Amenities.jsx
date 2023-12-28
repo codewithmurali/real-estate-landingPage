@@ -19,7 +19,7 @@ const CardContainer = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 2rem; /* Add spacing between cards */
+  gap: 2rem; 
 `;
 
 const Card = styled.div`
@@ -31,18 +31,19 @@ const Card = styled.div`
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: column;
-  gap: .8rem;
+  gap: 0.8rem;
   justify-content: center;
   align-items: center;
 `;
 
 const Text = styled.div`
-padding:5px;
+  padding: 8px;
   font-size: large;
   font-weight: bolder;
+  text-align: center;
 `;
 
-const img = styled.img`
+const image = styled.img`
   padding: 8px;
   border-radius: 10px 10px 0px 0px;
 `;
@@ -55,7 +56,7 @@ const Amenities = () => {
         {AMENITIES_ELEMENTS.map((item) => {
           return (
             <Card key={item.id}>
-              <img src={`~${item.image}`} alt={`${item.name}`} />
+              <image src={`~${item.image}`} alt={`${item.name}`} />
               <Text>{item.name}</Text>
             </Card>
           );
