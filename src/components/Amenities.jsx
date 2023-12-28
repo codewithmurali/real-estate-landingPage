@@ -19,7 +19,7 @@ const CardContainer = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 2rem; 
+  gap: 2rem;
 `;
 
 const Card = styled.div`
@@ -43,7 +43,7 @@ const Text = styled.div`
   text-align: center;
 `;
 
-const image = styled.img`
+const Image = styled.img`
   padding: 8px;
   border-radius: 10px 10px 0px 0px;
 `;
@@ -56,7 +56,7 @@ const Amenities = () => {
         {AMENITIES_ELEMENTS.map((item) => {
           return (
             <Card key={item.id}>
-              <image src={`~${item.image}`} alt={`${item.name}`} />
+              <Image src={`~${item.image}`} alt={`${item.name}`} />
               <Text>{item.name}</Text>
             </Card>
           );
