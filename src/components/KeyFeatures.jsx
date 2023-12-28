@@ -8,7 +8,7 @@ const Title = styled.h1`
 const FeatureContainer = styled.div`
   margin: auto;
   width: 80%;
-  padding: 36px;
+  padding: 4rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -19,11 +19,11 @@ const FeatureContainer = styled.div`
 const Feature = styled.div`
   width: 600px;
   height: 60px;
-  margin-inline: 3rem;
+  margin-inline: 2.8rem;
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 10px;
+  gap: 2rem;
   justify-content: center;
   align-items: center;
   position: relative;
