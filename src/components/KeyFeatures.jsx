@@ -1,10 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import { KEY_FEATURES } from "./constants/constant";
+import { KEY_FEATURES } from "../data";
+
 const Title = styled.h1`
   color: var(--main-shade);
   text-align: center;
 `;
+
 const FeatureContainer = styled.div`
   margin: auto;
   width: 80%;
@@ -53,22 +55,22 @@ const TextContainer = styled.div`
 `;
 
 const KeyFeatures = () => {
-  return (
-    <div>
-      <Title>What makes us Different</Title>
+    return (
+        <div>
+            <Title>What makes us Different</Title>
 
-      <FeatureContainer>
-        {KEY_FEATURES.map((item) => {
-          return (
-            <Feature key={item.id}>
-              <Circle></Circle>
-              <TextContainer>{item.feature}</TextContainer>
-            </Feature>
-          );
-        })}
-      </FeatureContainer>
-    </div>
-  );
+            <FeatureContainer>
+                {KEY_FEATURES.map((item) => {
+                    return (
+                        <Feature key={item.id}>
+                            <Circle></Circle>
+                            <TextContainer>{item.feature}</TextContainer>
+                        </Feature>
+                    );
+                })}
+            </FeatureContainer>
+        </div>
+    );
 };
 
 export default KeyFeatures;

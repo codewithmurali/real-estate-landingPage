@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { AMENITIES_ELEMENTS } from "./constants/constant.js";
+import { AMENITIES_ELEMENTS } from "../data";
 
 const AmenitiesContainer = styled.div`
   padding: 50px;
@@ -8,7 +8,7 @@ const AmenitiesContainer = styled.div`
 
 const Title = styled.h1`
   color: var(--main-shade);
-  text-align: center;
+  text-align: left;
 `;
 
 const CardContainer = styled.div`
@@ -23,8 +23,8 @@ const CardContainer = styled.div`
 `;
 
 const Card = styled.div`
-  width: 280px;
-  height: 370px;
+  width: 200px;
+  height: 250px;
   margin: 0.5rem;
   border: 1px solid #ccc;
   border-radius: 10px;
