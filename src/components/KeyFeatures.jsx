@@ -11,66 +11,78 @@ const FeatureContainer = styled.div`
   margin: auto;
   width: 80%;
   padding: 36px;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust the minimum and maximum width for responsiveness */
+  gap: 20px; /* Adjust the gap according to your design */
   justify-content: center;
   align-items: center;
-  gap: 3rem;
+
+  @media (max-width: 768px) {
+    padding: 20px; /* Adjust padding for smaller screens */
+  }
 `;
 
 const Feature = styled.div`
-  width: 600px;
-  height: 60px;
-  margin-inline: 3rem;
+  width: 100%;
+  height: 120px;
   display: flex;
-  flex-direction: row;
   align-items: center;
   gap: 10px;
-  justify-content: center;
-  align-items: center;
   position: relative;
-  margin: 0.5rem;
   border: 1px solid #ccc;
   border-radius: 10px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
+
+  @media (max-width: 768px) {
+    height: 80px; /* Adjust height for smaller screens */
+  }
 `;
 
 const Circle = styled.div`
-  width: 90px;
-  height: 90px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   border: 1px solid #ccc;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
   position: absolute;
-  left: -40px;
+  left: -30px;
   background-color: var(--secondary-color);
   z-index: 2;
+
+  @media (max-width: 768px) {
+    width: 40px; /* Adjust width for smaller screens */
+    height: 40px; /* Adjust height for smaller screens */
+    left: -20px; /* Adjust position for smaller screens */
+  }
 `;
 
 const TextContainer = styled.div`
   text-align: center;
-  width: 80%;
- 
+  width: 100%;
+  padding: 0px 20px;
 
+  @media (max-width: 768px) {
+    font-size: 14px; /* Adjust font size for smaller screens */
+  }
 `;
 
 const KeyFeatures = () => {
-    return (
-        <div>
-            <Title>What makes us Different</Title>
+  return (
+    <div>
+      <Title>What makes us Different</Title>
 
-            <FeatureContainer>
-                {KEY_FEATURES.map((item) => {
-                    return (
-                        <Feature key={item.id}>
-                            <Circle></Circle>
-                            <TextContainer>{item.feature}</TextContainer>
-                        </Feature>
-                    );
-                })}
-            </FeatureContainer>
-        </div>
-    );
+      <FeatureContainer>
+        {KEY_FEATURES.map((item) => {
+          return (
+            <Feature key={item.id}>
+              <Circle></Circle>
+              <TextContainer>{item.feature}</TextContainer>
+            </Feature>
+          );
+        })}
+      </FeatureContainer>
+    </div>
+  );
 };
 
 export default KeyFeatures;
