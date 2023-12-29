@@ -3,7 +3,6 @@ import Slider from 'react-slick';
 import { streetViewData } from '../data';
 import styled from 'styled-components';
 
-
 const StreetView = () => {
     const [data, setData] = useState([]);
 
@@ -53,7 +52,7 @@ const StreetView = () => {
 
     return (
         <Container id="streetview">
-            <h1>STREET VIEW</h1>
+            <Title>STREET VIEW</Title>
             <Slider {...settings}>
                 {data.map((item, index) => (
                     <Image key={index}>
@@ -66,25 +65,23 @@ const StreetView = () => {
     );
 };
 
-
-
-export default StreetView;
-
 const Container = styled.div`
-padding: 20px 100px;
-.slick-track {
-    display: flex;
-}
-h1{
-    text-align: center;
-}
+  padding: 0 5vw; 
+  margin: 25px 0;
+  text-align: center;
 
-@media only screen and (max-width: 768px) {
-      padding: 50px ;
-      h1{
-        text-align: center;
-      }
+  h1 {
+    font-size: 2rem;
   }
+
+  @media only screen and (max-width: 768px) {
+    padding: 50px 5vw;
+  }
+`;
+
+const Title = styled.h1`
+  font-size: var(--large-font-size);
+  color: var(--main-shade);
 `;
 
 const Image = styled.div`
@@ -93,13 +90,18 @@ const Image = styled.div`
   text-align: center;
   cursor: pointer;
   padding: 20px;
+  width: 100%;
 
   img {
     width: 100%;
-    height: 250px;
+    height: 350px;
     object-fit: cover;
     border-radius: 16px;
   }
+
+  h3 {
+    margin-top: 10px;
+  }
 `;
 
-
+export default StreetView;

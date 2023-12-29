@@ -5,6 +5,10 @@ import Security from '../src/assets/icons/security.png'
 import Solor from '../src/assets/icons/solor.png'
 import Nature from '../src/assets/icons/nature.png'
 
+import GroundFloorImage from './assets/ground floor.png';
+import FirstFloorImage from '/src/assets/first floor.png';
+import SecondFloorImage from '/src/assets/second floor.png';
+
 export const faqData = [
     {
         question: "What is Lorem Ipsum?",
@@ -129,4 +133,20 @@ export const KEY_FEATURES = [
         id: 12,
         feature: "ACCESS TO TOURIST ATTRACTIONS",
     },
+];
+
+
+export const FloorImages = [
+    {
+        id: 0,
+        image: GroundFloorImage,
+    },
+    {
+        id: 1,
+        image: FirstFloorImage,
+    },
+    {
+        id: 2,
+        image: SecondFloorImage,
+    }
 ];

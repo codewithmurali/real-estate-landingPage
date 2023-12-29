@@ -1,20 +1,47 @@
-import React from "react";
-import styled from "styled-components";
-import { AMENITIES_ELEMENTS } from "../data";
+// Amenities.jsx
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import { AMENITIES_ELEMENTS } from '../data';
+import ContactForm from './ContactForm';
+
+const Amenities = () => {
+  const [isFormVisible, setIsFormVisible] = useState(false);
+
+  const openForm = () => {
+    setIsFormVisible(true);
+  };
+
+  return (
+    <AmenitiesContainer id="amenities">
+      <Title>AMENITIES</Title>
+      <CardContainer>
+        {AMENITIES_ELEMENTS.map((item) => (
+          <Card key={item.id}>
+            <CardImage src={`${item.image}`} alt={`${item.name}`} />
+            <div className="itemName">{item.name}</div>
+          </Card>
+        ))}
+      </CardContainer>
+      <ButtonContainer>
+        <Button onClick={openForm}>Open Form</Button>
+        {isFormVisible && <ContactForm onClose={() => setIsFormVisible(false)} />}
+      </ButtonContainer>
+    </AmenitiesContainer>
+  );
+};
 
 const AmenitiesContainer = styled.div`
-  padding: 20px 100px;
-  @media (max-width: 768px) {
-    padding: 20px 10px; 
-    width: 100%;
-  }
-
+  padding: 20px 5vw 25px; 
+  margin: 25px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const Title = styled.h1`
   color: var(--main-shade);
   text-align: center;
-  font-size: var(--h1-font-size);
+  font-size: var(--large-font-size); 
 `;
 
 const CardContainer = styled.div`
@@ -22,22 +49,17 @@ const CardContainer = styled.div`
   width: 75%;
   padding: 26px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 1rem;
-  justify-content: center;
-
-@media (max-width: 768px) {
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  width: 100%;
-  padding: 10px;
-  gap: 1rem; /* Add this line for consistent spacing */
-}
-
+  @media (max-width: 768px) {
+    width: 90%; 
+    padding: 16px;
+  }
 `;
 
 const Card = styled.div`
   position: relative;
-  width: 250px;
+  width: 100%;
   height: 250px;
   margin: 0.5rem;
   padding: 10px;
@@ -49,13 +71,8 @@ const Card = styled.div`
   transition: all 500ms ease-in;
   background-color: #fff;
 
-  @media (max-width: 768px) {
-    padding: 0px;
-    width: 100%;
-  }
-
   &:hover::before {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
@@ -66,7 +83,7 @@ const Card = styled.div`
     justify-content: center;
     align-items: center;
     color: white;
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: bold;
     text-align: center;
     z-index: 1;
@@ -75,162 +92,58 @@ const Card = styled.div`
   img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     background-position: center;
+
     @media (max-width: 768px) {
       object-fit: contain;
+    }
   }
 
+  .itemName {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    font-weight: bold;
+    color: transparent;
+    font-size: 1rem;
+    text-align: justify;
   }
-.itemName {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  font-weight: bold;
-  color: transparent;
-}
-
 
   &:hover .itemName {
     color: white;
   }
 `;
 
-const Amenities = () => {
-  return (
-    <AmenitiesContainer id="amenities">
-      <Title>AMENITIES</Title>
-      <CardContainer>
-        {AMENITIES_ELEMENTS.map((item) => {
-          return (
-            <Card key={item.id}>
-              <img src={`${item.image}`} alt={`${item.name}`} />
-              <div className="itemName">{item.name}</div>
-            </Card>
-          );
-        })}
-      </CardContainer>
-    </AmenitiesContainer>
-  );
-};
+const CardImage = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-position: center;
+
+  @media (max-width: 768px) {
+    object-fit: contain;
+  }
+`;
+
+const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+`;
+
+const Button = styled.button`
+  border-radius: 28px;
+  font-family: 'Arial', sans-serif;
+  color: #ffffff;
+  font-size: 1rem;
+  background: #7065f0;
+  padding: 15px 30px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+`;
 
 export default Amenities;
-
-
-
-
-
-
-// import React from "react";
-// import styled from "styled-components";
-// import { AMENITIES_ELEMENTS } from "../data";
-
-// const AmenitiesContainer = styled.div`
-//   padding: 50px;
-// `;
-
-// const Title = styled.h1`
-//   color: var(--main-shade);
-//   text-align: left;
-// `;
-
-// const CardContainer = styled.div`
-//   margin: auto;
-//   width: 75%;
-//   padding: 36px;
-//   display: flex;
-//   flex-wrap: wrap;
-//   justify-content: center;
-//   align-items: center;
-//   gap: 2rem;
-// `;
-
-// const Card = styled.div`
-//   width: 200px;
-//   height: 250px;
-//   margin: 0.5rem;
-//   padding: 10px;
-//   border: 1px solid #ccc;
-//   border-radius: 10px;
-//   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
-//   display: flex;
-//   flex-direction: column;
-//   gap: 0.8rem;
-//   justify-content: center;
-//   align-items: center;
-//   cursor: pointer;
-//   perspective: 1000px; /* Define the perspective for the 3D effect */
-
-//   &:hover {
-//     transform: rotateY(180deg); /* Rotate the card on hover */
-//   }
-// `;
-
-// const CardFront = styled.div`
-//   width: 100%;
-//   height: 100%;
-//   img {
-//     width: 100%;
-//     height: 100%;
-//     object-fit: cover;
-//     border-radius: 10px;
-//   }
-// `;
-
-// const Text = styled.div`
-//   padding: 8px;
-//   font-size: large;
-//   font-weight: bolder;
-//   text-align: center;
-// `;
-
-
-// const CardBack = styled.div`
-//   width: 100%;
-//   height: 100%;
-//   transform: rotateY(180deg); /* Initially hide the back of the card */
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: center;
-//   background-color: #fff;
-//   border-radius: 10px;
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-
-//   ${Text} {
-//     /* Apply styling to the text on the back of the card */
-//     padding: 8px;
-//     font-size: large;
-//     font-weight: bolder;
-//     text-align: center;
-//   }
-// `;
-
-
-// const Amenities = () => {
-//   return (
-//     <AmenitiesContainer>
-//       <Title>Amenities</Title>
-//       <CardContainer>
-//         {AMENITIES_ELEMENTS.map((item) => {
-//           return (
-//             <Card key={item.id}>
-//               <CardFront>
-//                 <img src={`${item.image}`} alt={`${item.name}`} />
-//               </CardFront>
-//               <CardBack>
-//                 <Text>{item.name}</Text>
-//               </CardBack>
-//             </Card>
-//           );
-//         })}
-//       </CardContainer>
-//     </AmenitiesContainer>
-//   );
-// };
-
-// export default Amenities;

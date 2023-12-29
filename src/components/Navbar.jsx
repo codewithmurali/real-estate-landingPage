@@ -18,37 +18,46 @@ const Navbar = () => {
   return (
     <StyledNavbar>
       <div className="logo">Your Logo</div>
-      <div
-        className={`menu-toggle ${isMenuOpen ? "open" : ""}`}
-        onClick={handleMenuToggle}
+      <nav>
+        <button
+          className={`menu-toggle ${isMenuOpen ? "open" : ""}`}
+          onClick={handleMenuToggle}
+          aria-label="Toggle Navigation"
+        >
+          <div className="bar"></div>
+          <div className="bar"></div>
+          <div className="bar"></div>
+        </button>
+        <ul className={`nav-links ${showNavLinks ? "show" : ""}`}>
+          <li>
+            <a href="#home" onClick={handleNavLinkClick}>
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="#about" onClick={handleNavLinkClick}>
+              About
+            </a>
+          </li>
+          <li>
+            <a href="#amenities" onClick={handleNavLinkClick}>
+              Amenities
+            </a>
+          </li>
+          <li>
+            <a href="#streetview" onClick={handleNavLinkClick}>
+              Street View
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <button
+        className="contact-btn"
+        onClick={handleNavLinkClick}
+        aria-label="Contact Us"
       >
-        <div className="bar"></div>
-        <div className="bar"></div>
-        <div className="bar"></div>
-      </div>
-      <ul className={`nav-links ${showNavLinks ? "show" : ""}`}>
-        <li>
-          <a href="#home" onClick={handleNavLinkClick}>
-            Home
-          </a>
-        </li>
-        <li>
-          <a href="#about" onClick={handleNavLinkClick}>
-            About
-          </a>
-        </li>
-        <li>
-          <a href="#amenities" onClick={handleNavLinkClick}>
-            Amenities
-          </a>
-        </li>
-        <li>
-          <a href="#streetview" onClick={handleNavLinkClick}>
-            Street View
-          </a>
-        </li>
-      </ul>
-      <button className="contact-btn">Contact</button>
+        Contact
+      </button>
     </StyledNavbar>
   );
 };
@@ -99,6 +108,7 @@ const StyledNavbar = styled.nav`
       text-decoration: none;
       color: var(--primary-color);
       font-weight: bold;
+      transition: color 0.3s ease-in-out;
     }
   }
 

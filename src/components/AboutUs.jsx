@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import { Element } from 'react-scroll';
 import styled, { keyframes } from 'styled-components';
-import Image1 from '../assets/image 1.jpg';
+import Image1 from '../assets/image 1.jpg'; 
 import '../index.css';
 
 const fadeInLeft = keyframes`
@@ -37,15 +38,16 @@ const fadeInImage = keyframes`
 `;
 
 const AboutUs = () => {
+  
   return (
-    <StyledAboutUsSection id="about">
+    <StyledAboutUsSection id="about" aria-labelledby="about-heading">
       <Left>
         <Image>
-          <img src={Image1} alt="Image" />
+          <img src={Image1} alt="Luxury Living Space" loading="lazy" />
         </Image>
       </Left>
       <Right>
-        <h1>About Us</h1>
+        <h1 id="about-heading">About Us</h1>
         <StyledParagraph>
           Experience elevated living with <span>K&L Life Spaces</span>, a subsidiary of <span>Nakshatra Builders</span> and{' '}
           <span>HavinHomes Realty</span>. We specialize in crafting modern luxury living spaces, transforming blueprints into
@@ -57,12 +59,16 @@ const AboutUs = () => {
   );
 };
 
+export default AboutUs;
+
+
 const StyledAboutUsSection = styled.section`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   column-gap: 20px;
   align-items: center;
-  padding: 50px 100px;
+  padding: 0px 100px;
+  margin: 25px 0px;
   background-color: var(--secondary-color);
   @media only screen and (max-width: 768px) {
     grid-template-columns: 1fr;
@@ -75,16 +81,17 @@ const StyledAboutUsSection = styled.section`
 const Left = styled.div`
   img {
     border-radius: 10px;
-    width: 100%; 
+    width: 100%;
     animation: ${fadeInImage} 1s ease-in-out;
   }
 `;
 
 const Right = styled.div`
   h1 {
-    font-size: 2rem; 
+    font-size: var(--large-font-size);
     margin-bottom: 10px;
     color: var(--primary-color);
+    text-align: center;
   }
 
   span {
@@ -93,18 +100,16 @@ const Right = styled.div`
   }
 
   @media only screen and (max-width: 768px) {
-    font-size: 1rem; 
+    font-size: var(--small-font-size);
     animation: ${fadeInLeft} 1s ease-in-out;
   }
 `;
 
 const StyledParagraph = styled.p`
-  line-height: 1.5; 
+  line-height: 1.5;
   text-align: justify;
 `;
 
 const Image = styled.div`
   width: 100%;
 `;
-
-export default AboutUs;

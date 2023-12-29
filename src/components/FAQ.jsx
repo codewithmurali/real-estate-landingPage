@@ -7,6 +7,7 @@ const FAQSection = styled.div`
   height: 100%;
 
   h1{
+    font-size: var(--large-font-size);
     text-align: center;
   }
 `;
@@ -52,30 +53,30 @@ const Arrow = styled.span`
 `;
 
 const FAQ = () => {
-    const [activeQuestions, setActiveQuestions] = useState([]);
+  const [activeQuestions, setActiveQuestions] = useState([]);
 
-    const toggleQuestion = (index) => {
-        setActiveQuestions((prev) =>
-            prev.includes(index) ? prev.filter((item) => item !== index) : [...prev, index]
-        );
-    };
-
-    return (
-        <FAQSection>
-            <h1>Frequently Asked Questions</h1>
-            <FAQWrapper>
-                {faqData.map((faq, index) => (
-                    <FAQItem key={index}>
-                        <Question onClick={() => toggleQuestion(index)} active={activeQuestions.includes(index)}>
-                            {faq.question}
-                            <Arrow active={activeQuestions.includes(index)}>▼</Arrow>
-                        </Question>
-                        <Answer visible={activeQuestions.includes(index)}>{faq.answer}</Answer>
-                    </FAQItem>
-                ))}
-            </FAQWrapper>
-        </FAQSection>
+  const toggleQuestion = (index) => {
+    setActiveQuestions((prev) =>
+      prev.includes(index) ? prev.filter((item) => item !== index) : [...prev, index]
     );
+  };
+
+  return (
+    <FAQSection>
+      <h1>Frequently Asked Questions</h1>
+      <FAQWrapper>
+        {faqData.map((faq, index) => (
+          <FAQItem key={index}>
+            <Question onClick={() => toggleQuestion(index)} active={activeQuestions.includes(index)}>
+              {faq.question}
+              <Arrow active={activeQuestions.includes(index)}>▼</Arrow>
+            </Question>
+            <Answer visible={activeQuestions.includes(index)}>{faq.answer}</Answer>
+          </FAQItem>
+        ))}
+      </FAQWrapper>
+    </FAQSection>
+  );
 };
 
 export default FAQ;
