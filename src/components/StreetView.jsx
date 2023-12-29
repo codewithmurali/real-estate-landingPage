@@ -55,7 +55,7 @@ const StreetView = () => {
     };
 
     return (
-        <Container>
+        <Container id="streetview">
             <h1>STREET VIEW</h1>
             <Slider {...settings}>
                 {data.map((item, index) => (

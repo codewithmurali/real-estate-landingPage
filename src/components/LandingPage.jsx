@@ -14,7 +14,7 @@ const fadeIn = keyframes`
 const LandingPage = () => {
   return (
     <>
-      <Hero>
+      <Hero id="home">
         <VideoContainer>
           <Video src={BackgroundVideo} autoPlay loop muted playsInline></Video>
           <Overlay />

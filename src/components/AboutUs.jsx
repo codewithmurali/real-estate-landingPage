@@ -38,7 +38,7 @@ const fadeInImage = keyframes`
 
 const AboutUs = () => {
   return (
-    <StyledAboutUsSection>
+    <StyledAboutUsSection id="about">
       <Left>
         <Image>
           <img src={Image1} alt="Image" />

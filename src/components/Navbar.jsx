@@ -28,23 +28,28 @@ const Navbar = () => {
       </div>
       <ul className={`nav-links ${showNavLinks ? "show" : ""}`}>
         <li>
-          <a href="#" onClick={handleNavLinkClick}>
+          <a href="#home" onClick={handleNavLinkClick}>
             Home
           </a>
         </li>
         <li>
-          <a href="#" onClick={handleNavLinkClick}>
+          <a href="#about" onClick={handleNavLinkClick}>
             About
           </a>
         </li>
         <li>
-          <a href="#" onClick={handleNavLinkClick}>
-            Services
+          <a href="#amenities" onClick={handleNavLinkClick}>
+            Amenities
           </a>
         </li>
         <li>
-          <a href="#" onClick={handleNavLinkClick}>
-            Contact
+          <a href="#streetview" onClick={handleNavLinkClick}>
+            Street View
+          </a>
+        </li>
+        <li>
+          <a href="#faq" onClick={handleNavLinkClick}>
+            FAQ
           </a>
         </li>
       </ul>

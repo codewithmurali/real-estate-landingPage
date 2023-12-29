@@ -94,7 +94,7 @@ const Card = styled.div`
 
 const Amenities = () => {
   return (
-    <AmenitiesContainer>
+    <AmenitiesContainer id="amenities">
       <Title>AMENITIES</Title>
       <CardContainer>
         {AMENITIES_ELEMENTS.map((item) => {

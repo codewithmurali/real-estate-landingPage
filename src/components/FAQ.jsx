@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import { faqData } from '../data';
+import React, { useState } from "react";
+import styled from "styled-components";
+import { faqData } from "../data";
 
 const FAQSection = styled.div`
   width: 100%;
   height: 100%;
 
-  h1{
+  h1 {
     text-align: center;
   }
 `;
@@ -16,8 +16,6 @@ const FAQWrapper = styled.div`
   margin: 20px auto;
   padding: 20px;
   background-color: var(--secondary-color);
-    
-
 `;
 
 const FAQItem = styled.div`
@@ -29,7 +27,7 @@ const Question = styled.div`
   cursor: pointer;
   padding: 10px;
   background-color: white;
-  color: ${(props) => (props.active ? 'var(--accent-color)' : 'black')};
+  color: ${(props) => (props.active ? "var(--accent-color)" : "black")};
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -38,7 +36,7 @@ const Question = styled.div`
 
 const Answer = styled.div`
   margin-top: 10px;
-  display: ${(props) => (props.visible ? 'block' : 'none')};
+  display: ${(props) => (props.visible ? "block" : "none")};
   padding: 10px;
   border-top: 1px solid #ddd;
   transition: display 200ms ease-in-out, opacity 300ms ease-in-out;
@@ -47,35 +45,42 @@ const Answer = styled.div`
 const Arrow = styled.span`
   font-size: 16px;
   margin-left: 10px;
-  transform: ${(props) => (props.active ? 'rotate(180deg)' : 'rotate(0)')};
+  transform: ${(props) => (props.active ? "rotate(180deg)" : "rotate(0)")};
   transition: transform 200ms ease-in-out;
 `;
 
 const FAQ = () => {
-    const [activeQuestions, setActiveQuestions] = useState([]);
+  const [activeQuestions, setActiveQuestions] = useState([]);
 
-    const toggleQuestion = (index) => {
-        setActiveQuestions((prev) =>
-            prev.includes(index) ? prev.filter((item) => item !== index) : [...prev, index]
-        );
-    };
-
-    return (
-        <FAQSection>
-            <h1>Frequently Asked Questions</h1>
-            <FAQWrapper>
-                {faqData.map((faq, index) => (
-                    <FAQItem key={index}>
-                        <Question onClick={() => toggleQuestion(index)} active={activeQuestions.includes(index)}>
-                            {faq.question}
-                            <Arrow active={activeQuestions.includes(index)}>▼</Arrow>
-                        </Question>
-                        <Answer visible={activeQuestions.includes(index)}>{faq.answer}</Answer>
-                    </FAQItem>
-                ))}
-            </FAQWrapper>
-        </FAQSection>
+  const toggleQuestion = (index) => {
+    setActiveQuestions((prev) =>
+      prev.includes(index)
+        ? prev.filter((item) => item !== index)
+        : [...prev, index]
     );
+  };
+
+  return (
+    <FAQSection id="faq">
+      <h1>Frequently Asked Questions</h1>
+      <FAQWrapper>
+        {faqData.map((faq, index) => (
+          <FAQItem key={index}>
+            <Question
+              onClick={() => toggleQuestion(index)}
+              active={activeQuestions.includes(index)}
+            >
+              {faq.question}
+              <Arrow active={activeQuestions.includes(index)}>▼</Arrow>
+            </Question>
+            <Answer visible={activeQuestions.includes(index)}>
+              {faq.answer}
+            </Answer>
+          </FAQItem>
+        ))}
+      </FAQWrapper>
+    </FAQSection>
+  );
 };
 
 export default FAQ;
