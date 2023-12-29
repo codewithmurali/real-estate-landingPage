@@ -9,60 +9,69 @@ const Title = styled.h1`
 
 const FeatureContainer = styled.div`
   margin: auto;
-  width: 80%;
+  width: 85%;
   padding: 36px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust the minimum and maximum width for responsiveness */
-  gap: 20px; /* Adjust the gap according to your design */
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(300px, 1fr)
+  ); 
+  gap: 2rem; 
   justify-content: center;
   align-items: center;
-
   @media (max-width: 768px) {
-    padding: 20px; /* Adjust padding for smaller screens */
+    padding: 20px;
   }
 `;
 
-const Feature = styled.div`
-  width: 100%;
-  height: 120px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  position: relative;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
+  const Feature = styled.div`
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 300ms ease;
+    @media (max-width: 768px) {
+      height: 80px;
+    }
 
-  @media (max-width: 768px) {
-    height: 80px; /* Adjust height for smaller screens */
-  }
-`;
+    .ag-courses-item_bg {
+      height: 128px;
+      width: 128px;
+      background-color: #7065f0;
+      z-index: 1;
+      position: absolute;
+      top: -90px;
+      left: -90px;
+      border-radius: 350px;
+  
+    }
+    &:hover .text {
+      color: #fff;
+    }
 
-const Circle = styled.div`
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  border: 1px solid #ccc;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
-  position: absolute;
-  left: -30px;
-  background-color: var(--secondary-color);
-  z-index: 2;
-
-  @media (max-width: 768px) {
-    width: 40px; /* Adjust width for smaller screens */
-    height: 40px; /* Adjust height for smaller screens */
-    left: -20px; /* Adjust position for smaller screens */
-  }
-`;
+    &:hover .ag-courses-item_bg {
+      -webkit-transform: scale(10);
+      -ms-transform: scale(10);
+      transform: scale(10);
+    }
+  `;
 
 const TextContainer = styled.div`
   text-align: center;
-  width: 100%;
+  width: 80%;
+  margin: auto;
+  font-size: 14px;
   padding: 0px 20px;
-
+  z-index: 2;
+  font-weight: 550;
   @media (max-width: 768px) {
-    font-size: 14px; /* Adjust font size for smaller screens */
+    font-size: 14px; 
   }
 `;
 
@@ -75,8 +84,8 @@ const KeyFeatures = () => {
         {KEY_FEATURES.map((item) => {
           return (
             <Feature key={item.id}>
-              <Circle></Circle>
-              <TextContainer>{item.feature}</TextContainer>
+              <div class="ag-courses-item_bg"></div>
+              <TextContainer className="text">{item.feature}</TextContainer>
             </Feature>
           );
         })}

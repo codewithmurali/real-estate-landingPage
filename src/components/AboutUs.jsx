@@ -38,7 +38,7 @@ const fadeInImage = keyframes`
 
 const AboutUs = () => {
   return (
-    <StyledAboutUsSection>
+    <StyledAboutUsSection id="about">
       <Left>
         <Image>
           <img src={Image1} alt="Image" />
@@ -46,12 +46,12 @@ const AboutUs = () => {
       </Left>
       <Right>
         <h1>About Us</h1>
-        <p>
+        <StyledParagraph>
           Experience elevated living with <span>K&L Life Spaces</span>, a subsidiary of <span>Nakshatra Builders</span> and{' '}
           <span>HavinHomes Realty</span>. We specialize in crafting modern luxury living spaces, transforming blueprints into
           realities that resonate with sophistication. Join us in creating a future where every structure is infused with
           passion, and every space reflects our commitment to crafting exceptional lifestyles.
-        </p>
+        </StyledParagraph>
       </Right>
     </StyledAboutUsSection>
   );
@@ -62,27 +62,27 @@ const StyledAboutUsSection = styled.section`
   grid-template-columns: repeat(2, 1fr);
   column-gap: 20px;
   align-items: center;
-  padding: 50px 20px; /* Adjust padding for smaller screens */
+  padding: 50px 100px;
   background-color: var(--secondary-color);
   @media only screen and (max-width: 768px) {
     grid-template-columns: 1fr;
     row-gap: 20px;
     text-align: center;
-    padding: 50px 10px; /* Adjust padding for smaller screens */
+    padding: 50px 10px;
   }
 `;
 
 const Left = styled.div`
   img {
     border-radius: 10px;
-    width: 100%; /* Make the image fill the container */
+    width: 100%; 
     animation: ${fadeInImage} 1s ease-in-out;
   }
 `;
 
 const Right = styled.div`
   h1 {
-    font-size: 2rem; /* Adjust font size for smaller screens */
+    font-size: 2rem; 
     margin-bottom: 10px;
     color: var(--primary-color);
   }
@@ -93,9 +93,14 @@ const Right = styled.div`
   }
 
   @media only screen and (max-width: 768px) {
-    font-size: 1rem; /* Adjust font size for smaller screens */
+    font-size: 1rem; 
     animation: ${fadeInLeft} 1s ease-in-out;
   }
+`;
+
+const StyledParagraph = styled.p`
+  line-height: 1.5; 
+  text-align: justify;
 `;
 
 const Image = styled.div`

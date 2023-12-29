@@ -3,10 +3,9 @@ import styled from "styled-components";
 import { AMENITIES_ELEMENTS } from "../data";
 
 const AmenitiesContainer = styled.div`
-  padding: 20px 100px; /* Adjusted padding for mobile and tablet */
+  padding: 20px 100px;
   @media (max-width: 768px) {
-    /* Adjusted styles for screens smaller than 768px (e.g., mobile) */
-    padding: 20px 10px; /* Adjusted padding for mobile and tablet */
+    padding: 20px 10px; 
     width: 100%;
   }
 
@@ -14,7 +13,7 @@ const AmenitiesContainer = styled.div`
 
 const Title = styled.h1`
   color: var(--main-shade);
-  text-align: left;
+  text-align: center;
   font-size: var(--h1-font-size);
 `;
 
@@ -27,17 +26,18 @@ const CardContainer = styled.div`
   gap: 1rem;
   justify-content: center;
 
-  @media (max-width: 768px) {
-    /* Adjusted styles for screens smaller than 768px (e.g., mobile) */
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    width: 100%;
-    padding: 10px;
-  }
+@media (max-width: 768px) {
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  width: 100%;
+  padding: 10px;
+  gap: 1rem; /* Add this line for consistent spacing */
+}
+
 `;
 
 const Card = styled.div`
   position: relative;
-  width: 200px;
+  width: 250px;
   height: 250px;
   margin: 0.5rem;
   padding: 10px;
@@ -50,7 +50,7 @@ const Card = styled.div`
   background-color: #fff;
 
   @media (max-width: 768px) {
-    /* Adjusted styles for screens smaller than 768px (e.g., mobile) */
+    padding: 0px;
     width: 100%;
   }
 
@@ -77,17 +77,21 @@ const Card = styled.div`
     height: 100%;
     object-fit: cover;
     background-position: center;
+    @media (max-width: 768px) {
+      object-fit: contain;
   }
 
-  .itemName {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    font-weight: bold;
-    color: transparent;
   }
+.itemName {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  font-weight: bold;
+  color: transparent;
+}
+
 
   &:hover .itemName {
     color: white;
@@ -96,7 +100,7 @@ const Card = styled.div`
 
 const Amenities = () => {
   return (
-    <AmenitiesContainer>
+    <AmenitiesContainer id="amenities">
       <Title>AMENITIES</Title>
       <CardContainer>
         {AMENITIES_ELEMENTS.map((item) => {

@@ -1,12 +1,8 @@
-
-
 import React, { useState, useEffect } from 'react';
 import Slider from 'react-slick';
 import { streetViewData } from '../data';
 import styled from 'styled-components';
 
-// Import left and right arrow icons
-import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 
 const StreetView = () => {
     const [data, setData] = useState([]);
@@ -26,8 +22,7 @@ const StreetView = () => {
         centerMode: true,
         centerPadding: '20px',
         focusOnSelect: true,
-        nextArrow: <NextArrow />,
-        prevArrow: <PrevArrow />,
+        arrows: false,
         responsive: [
             {
                 breakpoint: 1024,
@@ -57,7 +52,7 @@ const StreetView = () => {
     };
 
     return (
-        <Container>
+        <Container id="streetview">
             <h1>STREET VIEW</h1>
             <Slider {...settings}>
                 {data.map((item, index) => (
@@ -71,26 +66,6 @@ const StreetView = () => {
     );
 };
 
-const ArrowIcon = styled.div`
-  position: absolute;
-  font-size: 24px;
-  color: red;
-  cursor: pointer;
-  top: 50%;
-  transform: translateY(-50%);
-`;
-
-const NextArrow = ({ onClick }) => (
-    <ArrowIcon style={{ right: 0 }} onClick={onClick}>
-        <IoIosArrowForward />
-    </ArrowIcon>
-);
-
-const PrevArrow = ({ onClick }) => (
-    <ArrowIcon style={{ left: 0 }} onClick={onClick}>
-        <IoIosArrowBack />
-    </ArrowIcon>
-);
 
 
 export default StreetView;
@@ -101,8 +76,9 @@ padding: 20px 100px;
     display: flex;
 }
 h1{
-    text-align: right;
+    text-align: center;
 }
+
 @media only screen and (max-width: 768px) {
       padding: 50px ;
       h1{

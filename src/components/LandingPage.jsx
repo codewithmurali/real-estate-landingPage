@@ -14,7 +14,7 @@ const fadeIn = keyframes`
 const LandingPage = () => {
   return (
     <>
-      <Hero>
+      <Hero id="#home">
         <VideoContainer>
           <Video src={BackgroundVideo} autoPlay loop muted playsInline></Video>
           <Overlay />
@@ -32,10 +32,14 @@ export default LandingPage;
 
 const Hero = styled.section`
   position: relative;
-  height: 85vh;
+  height: 85vh; /* Default height for larger screens */
   overflow: hidden;
   width: 95vw;
   margin: auto;
+
+  @media only screen and (max-width: 768px) {
+    height: 60vh; /* Adjust the height for smaller screens */
+  }
 `;
 
 const VideoContainer = styled.div`
@@ -53,7 +57,7 @@ const Video = styled.video`
   left: 0;
   z-index: -1;
   border-radius: 16px;
-  `;
+`;
 
 const Overlay = styled.div`
   position: absolute;
@@ -61,9 +65,9 @@ const Overlay = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.7); /* Adjust the alpha value for darkness */
+  background: rgba(0, 0, 0, 0.7);
   z-index: 1;
-border-radius: 16px;
+  border-radius: 16px;
 `;
 
 const Content = styled.div`
@@ -75,9 +79,10 @@ const Content = styled.div`
   color: var(--secondary-color);
   z-index: 2;
   animation: ${fadeIn} 1.5s ease-in-out;
-width: 100%;
+  width: 100%;
+
   h1 {
-    font-size: 66px;
+    font-size: 56px;
   }
 
   @media only screen and (max-width: 768px) {

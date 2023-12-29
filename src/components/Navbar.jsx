@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-
+import React, { useState } from "react";
+import styled from "styled-components";
 
 const Navbar = () => {
   const [showNavLinks, setShowNavLinks] = useState(false);
@@ -19,30 +18,33 @@ const Navbar = () => {
   return (
     <StyledNavbar>
       <div className="logo">Your Logo</div>
-      <div className={`menu-toggle ${isMenuOpen ? 'open' : ''}`} onClick={handleMenuToggle}>
+      <div
+        className={`menu-toggle ${isMenuOpen ? "open" : ""}`}
+        onClick={handleMenuToggle}
+      >
         <div className="bar"></div>
         <div className="bar"></div>
         <div className="bar"></div>
       </div>
-      <ul className={`nav-links ${showNavLinks ? 'show' : ''}`}>
+      <ul className={`nav-links ${showNavLinks ? "show" : ""}`}>
         <li>
-          <a href="#" onClick={handleNavLinkClick}>
+          <a href="#home" onClick={handleNavLinkClick}>
             Home
           </a>
         </li>
         <li>
-          <a href="#" onClick={handleNavLinkClick}>
+          <a href="#about" onClick={handleNavLinkClick}>
             About
           </a>
         </li>
         <li>
-          <a href="#" onClick={handleNavLinkClick}>
-            Services
+          <a href="#amenities" onClick={handleNavLinkClick}>
+            Amenities
           </a>
         </li>
         <li>
-          <a href="#" onClick={handleNavLinkClick}>
-            Contact
+          <a href="#streetview" onClick={handleNavLinkClick}>
+            Street View
           </a>
         </li>
       </ul>
@@ -90,7 +92,9 @@ const StyledNavbar = styled.nav`
     li {
       margin: 10px 0;
     }
-
+    li > a:hover {
+      color: var(--accent-color);
+    }
     a {
       text-decoration: none;
       color: var(--primary-color);
