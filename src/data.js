@@ -9,6 +9,13 @@ import GroundFloorImage from './assets/ground floor.png';
 import FirstFloorImage from '/src/assets/first floor.png';
 import SecondFloorImage from '/src/assets/second floor.png';
 
+import EastSideStreetView from './assets/001.jpg'
+import EastSideFrontView from './assets/002.jpg'
+import WestSideStreetView from './assets/003.jpg'
+import SymmetrycalView from './assets/004.jpg'
+import TopView from './assets/005.jpg'
+import AerialView from './assets/006.jpg'
+
 export const faqData = [
     {
         question: "What is Lorem Ipsum?",
@@ -39,12 +46,30 @@ export const partnerData = [
 
 
 export const streetViewData = [
-    { url: '../src/assets/001.jpg' },
-    { url: '../src/assets/002.jpg' },
-    { url: '../src/assets/003.jpg' },
-    { url: '../src/assets/004.jpg' },
-    { url: '../src/assets/005.jpg' },
-    { url: '../src/assets/006.jpg' },
+    {
+        id:0,
+        image:EastSideStreetView
+    },
+    {
+        id:1,
+        image:EastSideFrontView
+    },
+    {
+        id:2,
+        image:WestSideStreetView
+    },
+    {
+        id:3,
+        image:SymmetrycalView
+    },
+    {
+        id:4,
+        image:TopView
+    },
+    {
+        id:0,
+        image:AerialView
+    },
 ];
 
 export const AMENITIES_ELEMENTS = [

@@ -54,9 +54,10 @@ const StreetView = () => {
         <Container id="streetview">
             <Title>STREET VIEW</Title>
             <Slider {...settings}>
-                {data.map((item, index) => (
-                    <Image key={index}>
-                        <img src={item.url} alt={item.name} />
+                {data.map((item) => (
+                    <Image key={item.id}>
+                        <img src={item.image} alt={`Street View ${item.id}`} />
+                        {/* Assuming you have a name property in your data */}
                         <h3>{item.name}</h3>
                     </Image>
                 ))}
