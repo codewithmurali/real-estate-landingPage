@@ -1,16 +1,53 @@
 :root {
   --primary-color: black;
-  --secondary-color: #fff;
-  --main-shade: #7065f0;
-  --overlay-gradient: linear-gradient(
-    rgba(255, 255, 255, 0.879),
-    rgba(255, 255, 255, 0.786)
-  );
+  --secondary-color: white;
+  --accent-color: #7065f0;
+  --overlay-gradient: linear-gradient(rgba(255, 255, 255, 0.879), rgba(255, 255, 255, 0.786));
+  --large-font-size: 56px;
+  --small-font-size: 24px;
+  --mobile-font-size: 16px;
+  --desktop-font-size: 18px;
+  --tablet-font-size: 16px;
+
+
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+
+  font-family:   sans-serif;
+  font-size: var(--desktop-font-size);
+  overflow-x: hidden
 }
+
+h1 {
+  font-size: var(--h1-font-size);
+}
+
+
+
+
+/* MOBILE */
+@media only screen and (max-width: 768px) {
+  h1 {
+    font-size: var(--small-font-size);
+  }
+
+  * {
+    font-size: var(--mobile-font-size);
+  }
+}
+
+/* TABLETS */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  * {
+    font-size: var(--tablet-font-size);
+  }
+}
+

@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import { Element } from 'react-scroll';
 import styled, { keyframes } from 'styled-components';
-import Dove from '../assets/dove.png';
+import Image1 from '../assets/image 1.jpg'; 
+import '../index.css';
 
 const fadeInLeft = keyframes`
   from {
@@ -36,75 +38,78 @@ const fadeInImage = keyframes`
 `;
 
 const AboutUs = () => {
-    return (
-        <StyledAboutUsSection>
-            <Left>
-                <img src={Dove} alt="Dove" />
-            </Left>
-            <Right>
-                <h1>About Us</h1>
-                <p>
-                    Discover the essence of elevated living through <span>K&L Life Spaces</span>, an integral subsidiary within the
-                    esteemed <span>Nakshatra Builders</span> and <span>HavinHomes Realty family</span>. As specialists in property
-                    development and construction, we redefine spaces into captivating narratives of modern luxury. Our unwavering
-                    dedication to craftsmanship and innovation drives us to curate living experiences that transcend the ordinary.
-                    With a solid foundation of expertise from our parent companies, we turn blueprints into realities, and
-                    aspirations into addresses that resonate with sophistication. Join us in creating a future where each structure
-                    we build is infused with passion, and every space becomes a testament to our commitment to crafting exceptional
-                    lifestyles.
-                </p>
-            </Right>
-        </StyledAboutUsSection>
-    );
+  
+  return (
+    <StyledAboutUsSection id="about" aria-labelledby="about-heading">
+      <Left>
+        <Image>
+          <img src={Image1} alt="Luxury Living Space" loading="lazy" />
+        </Image>
+      </Left>
+      <Right>
+        <h1 id="about-heading">About Us</h1>
+        <StyledParagraph>
+          Experience elevated living with <span>K&L Life Spaces</span>, a subsidiary of <span>Nakshatra Builders</span> and{' '}
+          <span>HavinHomes Realty</span>. We specialize in crafting modern luxury living spaces, transforming blueprints into
+          realities that resonate with sophistication. Join us in creating a future where every structure is infused with
+          passion, and every space reflects our commitment to crafting exceptional lifestyles.
+        </StyledParagraph>
+      </Right>
+    </StyledAboutUsSection>
+  );
 };
 
 export default AboutUs;
 
-const StyledAboutUsSection = styled.section`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 50px;
 
+const StyledAboutUsSection = styled.section`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 20px;
+  align-items: center;
+  padding: 0px 100px;
+  margin: 25px 0px;
+  background-color: var(--secondary-color);
   @media only screen and (max-width: 768px) {
-    flex-direction: column;
+    grid-template-columns: 1fr;
+    row-gap: 20px;
     text-align: center;
+    padding: 50px 10px;
   }
 `;
 
 const Left = styled.div`
-  flex: 1;
-
   img {
+    border-radius: 10px;
     width: 100%;
     animation: ${fadeInImage} 1s ease-in-out;
-  }
-
-  @media only screen and (max-width: 768px) {
-    margin-bottom: 10px;
-
-    img {
-      width: 100%;
-    }
   }
 `;
 
 const Right = styled.div`
-  flex: 1;
-  animation: ${fadeInRight} 1s ease-in-out;
-
   h1 {
-    font-size: 36px;
+    font-size: var(--large-font-size);
     margin-bottom: 10px;
+    color: var(--primary-color);
+    text-align: center;
   }
 
   span {
-    color: #7065f0;
+    color: var(--accent-color);
     font-weight: bold;
   }
 
   @media only screen and (max-width: 768px) {
-    font-size: 12px;
+    font-size: var(--small-font-size);
     animation: ${fadeInLeft} 1s ease-in-out;
   }
+`;
+
+const StyledParagraph = styled.p`
+  line-height: 1.5;
+  text-align: justify;
+`;
+
+const Image = styled.div`
+  width: 100%;
 `;
