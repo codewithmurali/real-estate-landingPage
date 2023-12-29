@@ -32,7 +32,7 @@ export default LandingPage;
 
 const Hero = styled.section`
   position: relative;
-  height: 80vh;
+  height: 85vh;
   overflow: hidden;
   width: 95vw;
   margin: auto;
@@ -52,9 +52,8 @@ const Video = styled.video`
   top: 0;
   left: 0;
   z-index: -1;
-  border-bottom-left-radius: 16px;
-  border-bottom-right-radius: 16px;
-`;
+  border-radius: 16px;
+  `;
 
 const Overlay = styled.div`
   position: absolute;
@@ -64,8 +63,7 @@ const Overlay = styled.div`
   height: 100%;
   background: rgba(0, 0, 0, 0.7); /* Adjust the alpha value for darkness */
   z-index: 1;
-    border-bottom-left-radius: 16px;
-  border-bottom-right-radius: 16px;
+border-radius: 16px;
 `;
 
 const Content = styled.div`

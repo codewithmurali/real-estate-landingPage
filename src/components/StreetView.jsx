@@ -1,93 +1,3 @@
-// import React, { useState, useEffect } from 'react'
-// import Slider from 'react-slick'
-// import { streetViewData } from '../data'
-// import styled from 'styled-components'
-
-// const StreetView = () => {
-//     const [data, setData] = useState([])
-
-//     useEffect(() => {
-//         setData(streetViewData)
-//     }, [])
-
-//     const settings = {
-//         dots: false,
-//         infinite: true,
-//         speed: 500,
-//         slidesToShow: 3,
-//         slidesToScroll: 1,
-//         autoplay: true,
-//         autoplaySpeed: 2000,
-//         centerMode: true,
-//         centerPadding: '20px',
-//         focusOnSelect: true,
-//         responsive: [
-//             {
-//                 breakpoint: 1024,
-//                 settings: {
-//                     slidesToShow: 3,
-//                     slidesToScroll: 1,
-//                     infinite: true,
-//                     dots: true
-//                 }
-//             },
-//             {
-//                 breakpoint: 600,
-//                 settings: {
-//                     slidesToShow: 2,
-//                     slidesToScroll: 1,
-//                     initialSlide: 2
-//                 }
-//             },
-//             {
-//                 breakpoint: 480,
-//                 settings: {
-//                     slidesToShow: 1,
-//                     slidesToScroll: 1
-//                 }
-//             }
-//         ]
-//     }
-//     return (
-//         <Container>
-//             <Slider {...settings}>
-//                 {data.map((item, index) => (
-//                     <Image key={index}>
-//                         <img src={item.url} alt={item.name} />
-//                         <h3>{item.name}</h3>
-//                     </Image>
-//                 ))}
-//             </Slider>
-//         </Container>
-//     )
-// }
-
-// export default StreetView
-
-// const Container = styled.div`
-//     max-width: 100%;
-//     margin: auto !important;
-//     .slick-track{
-//         display: flex;
-//     }
-// `;
-
-// const Image = styled.div`
-//     display: inline-block;
-//     position: relative;
-//     text-align: center;
-//     cursor: pointer;
-//     padding: 20px;
-
-//     img {
-//         width: 100%;  // Set a fixed width
-//         height: 250px; // Set a fixed height
-//         object-fit: cover; // Maintain aspect ratio and cover the entire container
-//         border-radius: 16px;
-//     }
-
-// `;
-
 import React, { useState, useEffect } from 'react';
 import Slider from 'react-slick';
 import { streetViewData } from '../data';
@@ -123,7 +33,7 @@ const StreetView = () => {
                     slidesToShow: 3,
                     slidesToScroll: 1,
                     infinite: true,
-                    dots: true,
+                    dots: false,
                 },
             },
             {
@@ -146,7 +56,7 @@ const StreetView = () => {
 
     return (
         <Container>
-            <h1>Street View</h1>
+            <h1>STREET VIEW</h1>
             <Slider {...settings}>
                 {data.map((item, index) => (
                     <Image key={index}>
@@ -160,10 +70,12 @@ const StreetView = () => {
 };
 
 const ArrowIcon = styled.div`
-position: absolute;
+  position: absolute;
   font-size: 24px;
-  color: #000;
+  color: red;
   cursor: pointer;
+  top: 50%;
+  transform: translateY(-50%);
 `;
 
 const NextArrow = ({ onClick }) => (
@@ -178,16 +90,22 @@ const PrevArrow = ({ onClick }) => (
     </ArrowIcon>
 );
 
+
 export default StreetView;
 
 const Container = styled.div`
-  max-width: 100%;
-  margin: 50px !important;
-  .slick-track {
+padding: 20px 100px;
+.slick-track {
     display: flex;
-  }
-  h1{
-    text-align: center;
+}
+h1{
+    text-align: right;
+}
+@media only screen and (max-width: 768px) {
+      padding: 50px ;
+      h1{
+        text-align: center;
+      }
   }
 `;
 
@@ -205,3 +123,5 @@ const Image = styled.div`
     border-radius: 16px;
   }
 `;
+
+

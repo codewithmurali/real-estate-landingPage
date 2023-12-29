@@ -3,7 +3,7 @@
   --secondary-color: white;
   --accent-color: #7065f0;
   --overlay-gradient: linear-gradient(rgba(255, 255, 255, 0.879), rgba(255, 255, 255, 0.786));
-  --h1-font-size: 46px;
+  --h1-font-size: 2rem;
   --small-font-size: 24px;
   --mobile-font-size: 16px;
   --desktop-font-size: 18px;
