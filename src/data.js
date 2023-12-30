@@ -4,6 +4,7 @@ import Kids from '../src/assets/icons/kids.png'
 import Security from '../src/assets/icons/security.png'
 import Solor from '../src/assets/icons/solor.png'
 import Nature from '../src/assets/icons/nature.png'
+import Senior from '../src/assets/icons/senior.png'
 
 import GroundFloorImage from './assets/ground floor.png';
 import FirstFloorImage from '/src/assets/first floor.png';
@@ -28,6 +29,14 @@ export const faqData = [
     {
         question: "Nearby accessibility?",
         answer: "You have a good connectivity",
+    },
+    {
+        question: "What amenities are available in the vicinity?",
+        answer: "The property is surrounded by various amenities such as parks, schools, and shopping centers, providing a convenient and comfortable lifestyle.",
+    },
+    {
+        question: "What security measures are in place for the property?",
+        answer: "The property is equipped with state-of-the-art security systems, including surveillance cameras, secure access points, and on-site security personnel, ensuring the safety of residents.",
     },
 ];
 
@@ -85,7 +94,7 @@ export const AMENITIES_ELEMENTS = [
     {
         id: 3,
         image: Kids,
-        name: "Kids zone & Senior Citizens area",
+        name: "Kids zone",
     },
     {
         id: 4,
@@ -96,6 +105,11 @@ export const AMENITIES_ELEMENTS = [
         id: 5,
         image: Solor,
         name: "Solar Energy for Street Lighting",
+    },
+    {
+        id: 6,
+        image: Senior,
+        name: "Senior Citizen area",
     },
 ];
 

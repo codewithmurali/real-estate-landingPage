@@ -18,7 +18,7 @@ const Location = () => {
                         <h4>{category}</h4>
                         <ul>
                             {data[range][category].map((item, index) => (
-                                <li key={index}>{item}</li>
+                                <li key={index}>• {item}</li>
                             ))}
                         </ul>
                     </div>
@@ -58,7 +58,6 @@ const Location = () => {
             </RightSide>
         </Container>
     );
-
 };
 
 export default Location;
@@ -131,18 +130,20 @@ const TabsContainer = styled.div`
     max-width: 600px;
   }
 `;
-
 const TabButton = styled.button`
+ font-size: 14px;
+ margin-right: 5px;
   cursor: pointer;
   padding: 10px;
-  background-color: ${(props) => (props.active ? '#3498db' : '#ddd')};
+  background-color: ${(props) => (props.active ? '#5E5DF0' : '#ddd')};
   color: ${(props) => (props.active ? '#fff' : '#333')};
   border: none;
-  border-radius: 5px;
-  transition: background-color 0.3s, color 0.3s;
+  border-radius: 999px;
+  box-shadow: ${(props) => (props.active ? '#5E5DF0 0 10px 20px -10px' : 'none')};
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
 
   &:hover {
-    background-color: #3498db;
+    background-color: #5E5DF0;
     color: #fff;
   }
 `;

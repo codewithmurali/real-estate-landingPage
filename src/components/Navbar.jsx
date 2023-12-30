@@ -1,9 +1,20 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import Logo from '../assets/logo.png'
+import ContactForm from './ContactForm';
 
 const Navbar = () => {
   const [showNavLinks, setShowNavLinks] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isFormVisible, setIsFormVisible] = useState(false);
+
+  const openForm = () => {
+    setIsFormVisible(true);
+  };
+
+  const closeForm = () => {
+    setIsFormVisible(false);
+  };
 
   const handleMenuToggle = () => {
     setShowNavLinks(!showNavLinks);
@@ -17,7 +28,7 @@ const Navbar = () => {
 
   return (
     <StyledNavbar>
-      <div className="logo">Your Logo</div>
+      <div className="logo"><img src={Logo} alt="" /></div>
       <nav>
         <button
           className={`menu-toggle ${isMenuOpen ? "open" : ""}`}
@@ -49,15 +60,17 @@ const Navbar = () => {
               Street View
             </a>
           </li>
+          {/* Add more navigation links as needed */}
         </ul>
       </nav>
       <button
         className="contact-btn"
-        onClick={handleNavLinkClick}
-        aria-label="Contact Us"
+        onClick={isFormVisible ? closeForm : openForm}
+        aria-label={isFormVisible ? 'Close Form' : 'Contact Us'}
       >
-        Contact
+        {isFormVisible ? 'Close Form' : 'Contact'}
       </button>
+      {isFormVisible && <ContactForm onClose={closeForm} />}
     </StyledNavbar>
   );
 };
@@ -71,9 +84,9 @@ const StyledNavbar = styled.nav`
   justify-content: space-between;
   align-items: center;
   .logo {
-    color: var(--primary-color);
-    font-size: 24px;
-    font-weight: bold;
+    img{
+      width: 100px;
+    }
   }
 
   .nav-links {

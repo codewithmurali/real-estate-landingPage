@@ -2,15 +2,11 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { AMENITIES_ELEMENTS } from '../data';
-import ContactForm from './ContactForm';
 
 const Amenities = () => {
-  const [isFormVisible, setIsFormVisible] = useState(false);
-
-  const openForm = () => {
-    setIsFormVisible(true);
+  const handleButtonClick = () => {
+    window.open('https://asviinfra.com/', '_blank');
   };
-
   return (
     <AmenitiesContainer id="amenities">
       <Title>AMENITIES</Title>
@@ -23,8 +19,10 @@ const Amenities = () => {
         ))}
       </CardContainer>
       <ButtonContainer>
-        <Button onClick={openForm}>Open Form</Button>
-        {isFormVisible && <ContactForm onClose={() => setIsFormVisible(false)} />}
+        <Button onClick={handleButtonClick}>
+          Download Brochure
+        </Button>
+
       </ButtonContainer>
     </AmenitiesContainer>
   );
