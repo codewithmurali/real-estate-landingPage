@@ -17,24 +17,17 @@ const ContactForm = ({ onClose }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
-        // Use your Email.js service details
         const serviceId = 'your_service_id';
         const templateId = 'your_template_id';
         const userId = 'your_user_id';
-
-        // Send email using Email.js
         emailjs.send(serviceId, templateId, formData, userId)
             .then((response) => {
                 console.log('Email sent successfully:', response);
-                // Handle success (e.g., show a success message)
             })
             .catch((error) => {
                 console.error('Error sending email:', error);
-                // Handle error (e.g., show an error message)
             })
             .finally(() => {
-                // Close the form after submission
                 onClose();
             });
     };

@@ -8,16 +8,18 @@ import HomePage from './components/HomePage'
 import Navbar from './components/Navbar'
 import Partner from './components/Partner'
 import StreetView from './components/StreetView'
+import Location from './components/Location'
 function App() {
   return (
     <>
       <Navbar />
       <HomePage />
       <AboutUs />
-      <Amenities/>
-      <StreetView  />
-      <KeyFeatures/>
-      <Floor/>
+      <Amenities />
+      <StreetView />
+      <KeyFeatures />
+      <Floor />
+      <Location />
       <FAQ />
 
     </>

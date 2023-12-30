@@ -47,28 +47,34 @@ export const partnerData = [
 
 export const streetViewData = [
     {
-        id:0,
-        image:EastSideStreetView
+        id: 0,
+        image: EastSideStreetView,
+        name: 'East Side View'
     },
     {
-        id:1,
-        image:EastSideFrontView
+        id: 1,
+        image: EastSideFrontView,
+        name: 'East Side Front View'
     },
     {
-        id:2,
-        image:WestSideStreetView
+        id: 2,
+        image: WestSideStreetView,
+        name: 'West Side Street View'
     },
     {
-        id:3,
-        image:SymmetrycalView
+        id: 3,
+        image: SymmetrycalView,
+        name: 'Symmetrycal View'
     },
     {
-        id:4,
-        image:TopView
+        id: 4,
+        image: TopView,
+        name: 'Top View'
     },
     {
-        id:0,
-        image:AerialView
+        id: 0,
+        image: AerialView,
+        name: 'Aerial View'
     },
 ];
 
@@ -165,13 +171,43 @@ export const FloorImages = [
     {
         id: 0,
         image: GroundFloorImage,
+        name: 'Ground Floor'
     },
     {
         id: 1,
         image: FirstFloorImage,
+        name: 'First Floor'
     },
     {
         id: 2,
         image: SecondFloorImage,
+        name: 'Second Floor'
     }
 ];
+
+export const LocationData = {
+    '0-2KM': {
+        'JAPAN INDUSTRIAL CLUSTER': ['Isuzu Motors', 'Kobelco Cranes', 'NHK Springs', 'IMOP', 'Nippon Seiki'],
+        'FOOD JOINTS': ['Coffeday', 'The Kitchen Family Restaurant', 'Big Stay Restaurant', 'Swathi Residency', 'Chaitanya Mess'],
+        'HOTEL/SERVICE APARTMENTS': ['HavinHomes - Stay', 'Big Stay Restaurant', 'Comfort Stay', 'HavinHomes - Elite Villas', 'Mangi Garden Hotel']
+    },
+    '2-4KM': {
+        'INDUSTRIAL CLUSTER': ['Cadbury-Mondelez', 'Colgate Palmolive', 'Foxconn Mobiles', 'Unicharm - Mamy Poko', 'Lavazza India Pvt Ltd', 'VRV Italy', 'Hunter Douglas', 'TATA Trao', 'Nittan India Tech', 'Bergin Pipes India'],
+        'MEDICAL FACILITIES': ['Kanchi Kamakoti Child trust Hospital', 'Shankara Nethralaya', 'Kaveri Hospital'],
+        'EDUCATIONAL INSTITUTIONS': ['IIIT - Indian Institute of Information and Technology', 'Kreya International University', 'Accord International School', 'Chinnmaya Vidya Mandir - CBSE', 'Padmavathi CBSE School']
+    },
+    '4-6KM': {
+        'INDUSTRIAL CLUSTER': ['Kellogg’s', 'Alstom Metro Rail Pvt Ltd', 'Bluestar Air Conditioning', 'Amber Enterprises', 'Kikuwa', 'KCL', 'Paques Swiz Cleaning', 'Be Rollex', 'Indo Space', 'NGC Transmission'],
+        'CONNECTIVITY': ['Tada Railway Station', 'Tada Bus Stand', 'Sullurpeta Railway Station'],
+        'ENTERTAINMENT': ['V Epiq Multiplex - 3D Multiplex', 'N.V.R Movie Theatre']
+    },
+    '7 KM+': {
+        'INDUSTRIAL CLUSTER & FTWZ': ['Daikin Air condition', 'Hero Motocorp', 'Apollo Tyres', 'Linde / Praxair', 'PepsiCo India', 'West Pharma', 'Rockworth Furniture', 'Siddhartha FTWZ', 'TVS Brakes India', 'Sricity Business Center'],
+        'TEMPLES': ['Chengalamma Parameswari temple', 'Oneness Temple', 'Sri Kasi Visveshwara Temple - Mambattu'],
+        'ICONIC & TOURIST PLACES TO VISIT': ['ISRO Rocket Launch center', 'Pullicat Lake - Fishing & Boating', 'Tada Waterfalls - for trekking', 'Nelapattu Bird Sanctuary', 'One Ness - Kalki Golden Temple', 'Sri Kalahasthi Temple']
+    }
+};
+
+;
+
+

@@ -37,6 +37,9 @@ const RightDiv = styled.div`
   display: flex;
   justify-content: center;
 
+  h3{
+    text-align: center;
+  }
   @media (min-width: 768px) {
     flex-direction: row;
     justify-content: flex-end;
@@ -112,19 +115,21 @@ const Floor = () => {
       </LeftDiv>
       <RightDiv role="region" aria-label="Image Carousel">
         <Carousel {...settings}>
-          {FloorImages.map((floor, index) => (
+          {FloorImages.map((item, index) => (
             <div key={index}>
               <img
-                src={floor.image}
+                src={item.image}
                 alt={`Floor Image ${index}`}
                 role="presentation"
               />
+              <h3>{item.name}</h3>
             </div>
           ))}
         </Carousel>
       </RightDiv>
     </FloorSection>
   );
+
 };
 
 export default Floor;

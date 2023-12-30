@@ -57,7 +57,6 @@ const StreetView = () => {
                 {data.map((item) => (
                     <Image key={item.id}>
                         <img src={item.image} alt={`Street View ${item.id}`} />
-                        {/* Assuming you have a name property in your data */}
                         <h3>{item.name}</h3>
                     </Image>
                 ))}
