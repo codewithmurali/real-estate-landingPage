@@ -28,7 +28,7 @@ const Card = styled.div`
   }
 
   @media screen and (max-width: 480px) {
-    width: calc(100% - 20px); /* One card per row on mobile devices */
+    width: 200px; /* One card per row on mobile devices */
   }
 `;
 
