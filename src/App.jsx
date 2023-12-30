@@ -9,6 +9,7 @@ import Navbar from './components/Navbar'
 import StreetView from './components/StreetView'
 import Location from './components/Location'
 import CardGrid from './components/CardGrid'
+import Footer from './components/Footer'
 function App() {
   return (
     <>
@@ -22,7 +23,7 @@ function App() {
       <Location />
       <CardGrid />
       <FAQ />
-
+      <Footer />
     </>
   );
 }

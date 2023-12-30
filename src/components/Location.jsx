@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import { LocationData } from '../data';
+import React, { useState } from "react";
+import styled from "styled-components";
+import { LocationData } from "../data";
 
 const Location = () => {
-    const [activeTab, setActiveTab] = useState('0-2KM');
+    const [activeTab, setActiveTab] = useState("0-2KM");
 
     const handleTabChange = (tab) => {
         setActiveTab(tab);
@@ -18,7 +18,7 @@ const Location = () => {
                         <h4>{category}</h4>
                         <ul>
                             {data[range][category].map((item, index) => (
-                                <li key={index}>• {item}</li>
+                                <li key={index}>{item}</li>
                             ))}
                         </ul>
                     </div>
@@ -52,9 +52,7 @@ const Location = () => {
                         </TabButton>
                     ))}
                 </TabsContainer>
-                <TabContent>
-                    {renderTabContent(LocationData)}
-                </TabContent>
+                <TabContent>{renderTabContent(LocationData)}</TabContent>
             </RightSide>
         </Container>
     );
@@ -63,13 +61,14 @@ const Location = () => {
 export default Location;
 
 const Container = styled.div`
+  padding: 3rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   height: 100vh;
   overflow: hidden; /* Prevent scroll bars in the container */
-    background-color: var(--accent-color);
+  background-color: var(--accent-color);
   @media (min-width: 768px) {
     flex-direction: row;
     height: auto; /* Allow the height to grow as needed */
@@ -98,7 +97,7 @@ const LeftSide = styled.div`
   @media (min-width: 1200px) {
     iframe {
       width: 600px;
-      height: 450px;
+      height: 500px;
     }
   }
 `;
@@ -107,12 +106,13 @@ const RightSide = styled.div`
   position: relative;
   width: 100%;
   max-width: 300px;
-  height: 600px;
+  height: 700px;
   margin-top: 20px;
+
   overflow-y: auto;
   @media (min-width: 768px) {
     max-width: 400px;
-    height: 100%; 
+    height: 100%;
   }
 `;
 
@@ -120,41 +120,42 @@ const TabsContainer = styled.div`
   width: 100%;
   max-width: 300px;
   height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
   @media (min-width: 768px) {
     max-width: 400px;
-    height: 100%; 
+    height: 100%;
   }
 
   @media (min-width: 1024px) {
     max-width: 600px;
   }
 `;
+
 const TabButton = styled.button`
- font-size: 14px;
- margin-right: 5px;
   cursor: pointer;
   padding: 10px;
-  background-color: ${(props) => (props.active ? '#5E5DF0' : '#ddd')};
-  color: ${(props) => (props.active ? '#fff' : '#333')};
+  background-color: ${(props) => (props.active ? "#3498db" : "#ddd")};
+  color: ${(props) => (props.active ? "#fff" : "#333")};
   border: none;
-  border-radius: 999px;
-  box-shadow: ${(props) => (props.active ? '#5E5DF0 0 10px 20px -10px' : 'none')};
-  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
 
   &:hover {
-    background-color: #5E5DF0;
+    background-color: #3498db;
     color: #fff;
   }
 `;
 
 const TabContent = styled.div`
   margin-top: 20px;
+  height: 580px;
 `;
 
 const Tab = styled.div`
-  margin-bottom: 20px;
-  display: ${(props) => (props.active ? 'block' : 'none')};
+  display: ${(props) => (props.active ? "block" : "none")};
   background-color: #fff;
   padding: 15px;
   border-radius: 8px;
