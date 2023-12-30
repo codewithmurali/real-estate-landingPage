@@ -9,8 +9,9 @@ const Container = styled.div`
   flex-wrap: wrap;
   justify-content: space-around;
   margin: 20px auto;
-  width: 100vw;
-  padding: 20px 100px;
+  width: 100%;
+  padding: 20px;
+  max-width: 1200px; /* Adjust max-width as needed for your design */
 `;
 
 const Card = styled.div`
@@ -20,7 +21,17 @@ const Card = styled.div`
   text-align: center;
   padding: 5px;
   cursor: pointer;
+
+  @media screen and (max-width: 992px) {
+    width: 200px; /* Two cards per row on tablets */
+    margin: 10px;
+  }
+
+  @media screen and (max-width: 480px) {
+    width: calc(100% - 20px); /* One card per row on mobile devices */
+  }
 `;
+
 
 const Content = styled.div`
   position: relative;
@@ -72,7 +83,7 @@ const LoadMoreButton = styled.button`
 const CardGrid = () => {
     const [showMore, setShowMore] = useState(false);
     const [flipped, setFlipped] = useState([]);
-    const [visibleCards, setVisibleCards] = useState(8);
+    const [visibleCards, setVisibleCards] = useState(8); // Set to 8 initially for desktop
 
     useEffect(() => {
         setFlipped(Array(cardData.length).fill(false));
@@ -80,7 +91,7 @@ const CardGrid = () => {
 
     const handleLoadMore = () => {
         setShowMore(!showMore);
-        setVisibleCards((prev) => (showMore ? 8 : prev + 8));
+        setVisibleCards((prev) => (showMore ? 8 : prev + 8)); // Show 8 cards at a time
     };
 
     const handleCardClick = (index) => {
@@ -116,7 +127,7 @@ const CardGrid = () => {
                 ))}
             </Container>
             <LoadMoreButton
-                show={cardData.length > 0 && (showMore || visibleCards < cardData.length * 2)}
+                show={cardData.length > 0 && (showMore || visibleCards < cardData.length)}
                 onClick={handleLoadMore}
             >
                 {showMore ? 'Show Less' : 'Load More'}
@@ -124,6 +135,7 @@ const CardGrid = () => {
         </>
     );
 };
+
 
 export default CardGrid;
 
