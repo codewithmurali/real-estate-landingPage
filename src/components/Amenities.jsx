@@ -136,7 +136,6 @@ const ButtonContainer = styled.div`
 
 const Button = styled.button`
   border-radius: 28px;
-  font-family: 'Arial', sans-serif;
   color: #ffffff;
   font-size: 1rem;
   background: #7065f0;

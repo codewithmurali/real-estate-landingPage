@@ -13,6 +13,7 @@
     "color-convert": "^2.0.1",
     "emailjs-com": "^3.2.0",
     "react": "^18.2.0",
+    "react-card-flip": "^1.2.2",
     "react-dom": "^18.2.0",
     "react-icons": "^4.12.0",
     "react-intersection-observer": "^9.5.3",

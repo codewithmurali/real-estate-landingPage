@@ -9,6 +9,7 @@ import Navbar from './components/Navbar'
 import Partner from './components/Partner'
 import StreetView from './components/StreetView'
 import Location from './components/Location'
+import CardGrid from './components/CardGrid'
 function App() {
   return (
     <>
@@ -20,6 +21,7 @@ function App() {
       <KeyFeatures />
       <Floor />
       <Location />
+      <CardGrid />
       <FAQ />
 
     </>

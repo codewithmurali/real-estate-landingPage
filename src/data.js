@@ -18,31 +18,19 @@ import AerialView from './assets/006.jpg'
 
 export const faqData = [
     {
-        question: "What is Lorem Ipsum?",
-        answer: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        question: "Is that revenue generating property?",
+        answer: "Yes, having homes will give assurance for rental.",
     },
     {
-        question: "Why do we use it?",
-        answer: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+        question: "How about property management?",
+        answer: "Having homes will take care of your property and ensure your rental.Inspection monitoring all property management service will be taken care",
     },
     {
-        question: "What is Lorem Ipsum?",
-        answer: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    },
-    {
-        question: "Why do we use it?",
-        answer: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+        question: "Nearby accessibility?",
+        answer: "You have a good connectivity",
     },
 ];
 
-
-
-export const partnerData = [
-    {
-        name: 'Partner 1',
-        image: 'partner1',
-    },
-];
 
 
 export const streetViewData = [
@@ -112,10 +100,10 @@ export const AMENITIES_ELEMENTS = [
 ];
 
 export const KEY_FEATURES = [
-    // {
-    //     id: 0,
-    //     feature: "A PROPERTY IN TADA LIKE NO OTHER",
-    // },
+    {
+        id: 0,
+        feature: "A PROPERTY IN TADA LIKE NO OTHER",
+    },
     {
         id: 1,
         feature: "ISRO SPACE STATION LAUNCH PAD VISIBLE FROM OUR SITE.",
@@ -208,6 +196,125 @@ export const LocationData = {
     }
 };
 
-;
 
+// data.js
+export const cardData = [
+    {
+        id: 1,
+        front: {
+            title: 'PAINTING',
+        },
+        back: {
+            description: 'Internal: Apply putty over primer, followed by two coats of Asian Paints Royale emulsion for internal walls. For Sal doors, use wood primer and two coats of Asian Paints Enamel paint. External: Apply primer and two coats of Asian Ultima for external walls, using Ultima for textured surfaces on the front elevation.',
+        },
+    },
+    {
+        id: 2,
+        front: {
+            title: 'ELECTRICAL FIXTURES',
+        },
+        back: {
+            description: 'Wires: Use BESSCOM-approved ISI Mark top brands like Finolex or V Guard for lighting and heating circuits with ISI-branded PVC conduits. Switches: Install BESSCOM-approved ISI Mark modular switches from reputed brands like Legrand or Crabtree. Air-Conditioning: Provide AC points in all bedrooms and living areas.',
+        },
+    },
+    {
+        id: 3,
+        front: {
+            title: 'LANDSCAPING',
+        },
+        back: {
+            description: 'Professionally planned landscape with appropriate lighting.',
+        },
+    },
+    {
+        id: 4,
+        front: {
+            title: 'KITCHEN',
+        },
+        back: {
+            description: 'Use 20 mm thick Engineered Quartz Granite for kitchen countertops, and provide stainless steel sinks with drain boards.',
+        },
+    },
+    {
+        id: 5,
+        front: {
+            title: 'STRUCTURE',
+        },
+        back: {
+            description: '8-inch AAC/Solid Block for structure, with 4-inch inside.',
+        },
+    },
+    {
+        id: 6,
+        front: {
+            title: 'FLOORING',
+        },
+        back: {
+            description: 'Use EXXARO Brand or equivalent Digital Vitrified Tiles for living areas and bedrooms. Laminated wooden flooring for the master bedroom.',
+        },
+    },
+    {
+        id: 7,
+        front: {
+            title: 'STAIRCASE',
+        },
+        back: {
+            description: 'Use 20 mm thick high-quality granite for the staircase with wood railings and glass & SS brackets.',
+        },
+    },
+    {
+        id: 8,
+        front: {
+            title: 'DADOING',
+        },
+        back: {
+            description: 'High-quality glazed ceramic tiles for kitchen dadoing and bathrooms.',
+        },
+    },
+    {
+        id: 9,
+        front: {
+            title: 'DOORS',
+        },
+        back: {
+            description: 'Main door: Teak wood frame with teak shutter. Other doors: Good quality Sal wood frame with solid door shutters.',
+        },
+    },
+    {
+        id: 10,
+        front: {
+            title: 'WINDOWS',
+        },
+        back: {
+            description: 'Three-track high-quality UPVC frames with mosquito mesh shutters.',
+        },
+    },
+    {
+        id: 11,
+        front: {
+            title: 'VENTILATORS',
+        },
+        back: {
+            description: 'High-quality UPVC frames with glass louvers.',
+        },
+    },
+    {
+        id: 12,
+        front: {
+            title: 'SANITARY FITTINGS',
+        },
+        back: {
+            description: 'Use high-quality sanitary fittings like KOHLER Brand or equivalent for bathrooms.',
+        },
+    },
+    {
+        id: 13,
+        front: {
+            title: 'SECURITY NETWORK',
+        },
+        back: {
+            description: 'Install CCTV cameras in identified common areas and the clubhouse, with monitoring and recording from the security/maintenance office.',
+        },
+    },
+];
 
